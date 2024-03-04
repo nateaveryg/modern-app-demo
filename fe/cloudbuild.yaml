@@ -1,0 +1,40 @@
+# Overview: build and create a release via Google Cloud Deploy for Cloud Run
+# NOTE: currently requires SCM triggering due to dependency on the COMMIT_SHA variable
+steps:
+  # Build and tag using commit sha
+  - id: build
+    name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '.', '-t', 'us-central1-docker.pkg.dev/riccardo-blog-test-v1/sabre-demo-fe/fe:${COMMIT_SHA}', '-f', 'Dockerfile']
+  # Push the container image to Artifact Registry
+  - id: image push
+    name: 'gcr.io/cloud-builders/docker'
+    waitFor:
+    - build
+    args: ['push', 'us-central1-docker.pkg.dev/riccardo-blog-test-v1/sabre-demo-fe/fe:${COMMIT_SHA}']
+  # Create release in Google Cloud Deploy
+  - id: deploy to cloud deploy
+    name: "gcr.io/cloud-builders/gcloud:latest"
+    entrypoint: /bin/bash
+    args:
+      - "-xe"
+      - "-c"
+      - |
+        # Retrieve image SHA256 place into file
+        gcloud artifacts docker images describe \
+           'us-central1-docker.pkg.dev/riccardo-blog-test-v1/sabre-demo-fe/fe:${COMMIT_SHA}' \
+           --format 'value(image_summary.digest)' > digest        
+
+        gcloud deploy releases create release-$(date +'%Y%m%d%H%M%S') \
+          --region us-central1 \
+          --delivery-pipeline=cd-gui-demo \
+          --annotations=commitId=${REVISION_ID},gitlink=https://github.com/nateaveryg/app-fe/commit/${COMMIT_SHA} \
+          --images=service-a=us-central1-docker.pkg.dev/riccardo-blog-test-v1/sabre-demo-fe/fe:$COMMIT_SHA --format="value(image_summary.digest)"
+        
+images:
+- us-central1-docker.pkg.dev/riccardo-blog-test-v1/sabre-demo-fe/fe:${COMMIT_SHA}
+options:
+  machineType: 'E2_HIGHCPU_8'
+  requestedVerifyOption: VERIFIED
+  sourceProvenanceHash: ["SHA256"]    
+  substitution_option: 'ALLOW_LOOSE'
+tags: ['sabre-demo-fe']  
