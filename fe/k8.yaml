@@ -18,5 +18,5 @@ metadata:
   name: getting-started
 spec:
   containers:
-  - name: echoserver
-    image: my-app-image
+  - name: fe-app
+    image: fe
