@@ -1,12 +1,12 @@
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
-  name: fe
+  name: be
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: fe
+    name: be
   minReplicas: 1
   maxReplicas: 1
   metrics:

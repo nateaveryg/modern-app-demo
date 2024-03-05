@@ -28,7 +28,7 @@ steps:
           --region us-central1 \
           --delivery-pipeline=sabre-demo-pipeline \
           --skaffold-file=./fe/skaffold.yaml \
-          --annotations=commitId=${REVISION_ID},gitlink=https://github.com/nateaveryg/app-be/commit/${COMMIT_SHA} \
+          --annotations=commitId=${REVISION_ID},gitlink=https://github.com/nateaveryg/modern-app-demo/commit/${COMMIT_SHA} \
           --images=be=us-central1-docker.pkg.dev/riccardo-blog-test-v1/sabre-demo-be/be:${COMMIT_SHA} --format="value(image_summary.digest)"
           
         
