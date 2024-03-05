@@ -4,7 +4,7 @@ steps:
   # Build and tag using commit sha
   - id: build
     name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '.', '-t', 'us-central1-docker.pkg.dev/riccardo-blog-test-v1/sabre-demo-fe/fe:${COMMIT_SHA}', '-f', 'Dockerfile']
+    args: ['build', '.', '-t', 'us-central1-docker.pkg.dev/riccardo-blog-test-v1/sabre-demo-fe/f:${COMMIT_SHA}', '-f', 'Dockerfile']
   # Push the container image to Artifact Registry
   - id: image push
     name: 'gcr.io/cloud-builders/docker'
@@ -26,9 +26,9 @@ steps:
 
         gcloud deploy releases create release-$(date +'%Y%m%d%H%M%S') \
           --region us-central1 \
-          --delivery-pipeline=cd-gui-demo \
+          --delivery-pipeline=sabre-demo-pipeline \
           --annotations=commitId=${REVISION_ID},gitlink=https://github.com/nateaveryg/app-fe/commit/${COMMIT_SHA} \
-          --images=service-a=us-central1-docker.pkg.dev/riccardo-blog-test-v1/sabre-demo-fe/fe:$COMMIT_SHA --format="value(image_summary.digest)"
+          --images=fe=us-central1-docker.pkg.dev/riccardo-blog-test-v1/sabre-demo-fe/fe:${COMMIT_SHA} --format="value(image_summary.digest)"
         
 images:
 - us-central1-docker.pkg.dev/riccardo-blog-test-v1/sabre-demo-fe/fe:${COMMIT_SHA}

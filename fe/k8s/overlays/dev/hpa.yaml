@@ -1,0 +1,18 @@
+apiVersion: autoscaling/v2
+#apiVersion: autoscaling/v2beta2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: fe
+spec:
+  scaleTargetRef:
+    kind: deployment
+    name: fe
+  minReplicas: 1
+  maxReplicas: 1
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 90

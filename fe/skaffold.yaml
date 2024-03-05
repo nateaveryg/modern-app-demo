@@ -12,9 +12,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-apiVersion: skaffold/v2beta16
+apiVersion: skaffold/v4beta4
 kind: Config
-deploy:
-  kubectl:
-    manifests:
-      - k8.yaml
+metadata:
+  name: fe
+manifests:
+  kustomize:
+    paths:
+    - k8s/overlays/dev
+portForward:
+- resourceType: deployment
+  resourceName: fe
+  port: 8080
+  localPort: 5000
