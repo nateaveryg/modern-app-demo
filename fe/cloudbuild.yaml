@@ -4,7 +4,7 @@ steps:
   # Build and tag using commit sha
   - id: build
     name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '.', '-t', 'us-central1-docker.pkg.dev/riccardo-blog-test-v1/sabre-demo-fe/f:${COMMIT_SHA}', '-f', '../Dockerfile']
+    args: ['build', '.', '-t', 'us-central1-docker.pkg.dev/riccardo-blog-test-v1/sabre-demo-fe/f:${COMMIT_SHA}', '-f', './Dockerfile']
   # Push the container image to Artifact Registry
   - id: image push
     name: 'gcr.io/cloud-builders/docker'
