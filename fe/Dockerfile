@@ -6,6 +6,6 @@ RUN pip install --upgrade pip
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY ./fe/main.py /main.py
+COPY ./fe/* ./
 
 ENTRYPOINT [ "python", "main.py" ]
