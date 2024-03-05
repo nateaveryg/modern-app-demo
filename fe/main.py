@@ -15,3 +15,8 @@ def hello_world():
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
+
+@app.route("/hello_api_test")
+def hello_api():
+    # Make a request to the service-a API.
+    response = requests.get('http://35.188.104.236:8080/hello')
