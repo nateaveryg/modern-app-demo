@@ -29,6 +29,7 @@ steps:
           --delivery-pipeline=sabre-demo-pipeline \
           --annotations=commitId=${REVISION_ID},gitlink=https://github.com/nateaveryg/app-fe/commit/${COMMIT_SHA} \
           --images=fe=us-central1-docker.pkg.dev/riccardo-blog-test-v1/sabre-demo-fe/fe:${COMMIT_SHA} --format="value(image_summary.digest)"
+          --skaffold-file=./fe/skaffold.yaml
         
 images:
 - us-central1-docker.pkg.dev/riccardo-blog-test-v1/sabre-demo-fe/fe:${COMMIT_SHA}
