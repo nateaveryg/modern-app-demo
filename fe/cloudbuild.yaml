@@ -27,7 +27,7 @@ steps:
         gcloud deploy releases create release-$(date +'%Y%m%d%H%M%S') \
           --region us-central1 \
           --delivery-pipeline=sabre-demo-pipeline \
-          --skaffold-file=./fe/skaffold.yaml
+          --skaffold-file=./fe/skaffold.yaml \
           --annotations=commitId=${REVISION_ID},gitlink=https://github.com/nateaveryg/app-fe/commit/${COMMIT_SHA} \
           --images=fe=us-central1-docker.pkg.dev/riccardo-blog-test-v1/sabre-demo-fe/fe:${COMMIT_SHA} --format="value(image_summary.digest)"
           
