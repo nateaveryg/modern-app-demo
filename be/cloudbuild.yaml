@@ -39,4 +39,4 @@ options:
   requestedVerifyOption: VERIFIED
   sourceProvenanceHash: ["SHA256"]    
   substitution_option: 'ALLOW_LOOSE'
-tags: ['sabre-demo-fe']  
+tags: ['sabre-demo-be']  
