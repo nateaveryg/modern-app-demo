@@ -1,5 +1,5 @@
 ## demo app front end 
-from flask import Flask, render_template, request
+from flask import Flask, render_template
 import requests
 import os
 
@@ -17,14 +17,11 @@ def hello_world():
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
 
+BASE_URL = 'http://35.188.104.236:8080'
+
 @app.route("/hello_api_dev")
 def hello_api_dev():
     # Make a request to the BE service-a API.
-    response = requests.get('http://35.188.104.236:8080/hello')
+    response = requests.get(f"{BASE_URL}/hello")
+    print(response.json())
 
-    # Parse the JSON response.
-    data = response.json()
-
-    # Display the JSON data in a web browser.
-    print(data)
-    return data
