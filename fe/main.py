@@ -19,8 +19,8 @@ if __name__ == "__main__":
 
 BASE_URL = 'http://35.188.104.236:8080'
 
-@app.route("/hello_api_dev")
-def hello_api_dev():
+@app.route("/hello_api")
+def hello_api():
     # Make a request to the BE service-a API.
     response = requests.get(f"{BASE_URL}/hello")
     print(response.json())
