@@ -10,10 +10,12 @@ spec:
   selector:
     matchLabels:
       name: fe
+      app: fe
   template:
     metadata:
       labels:
         name: fe
+        app: fe
     spec:
       containers:
         - name: fe
