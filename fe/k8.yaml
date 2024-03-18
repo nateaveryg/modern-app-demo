@@ -16,15 +16,19 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: fe
+  labels:
+    app: fe
 spec:
   replicas: 1
   selector:
     matchLabels:
       name: fe
+      app: fe
   template:
     metadata:
       labels:
         name: fe
+        app: fe
     spec:
       containers:
         - name: fe
@@ -37,5 +41,6 @@ metadata:
   namespace: default
 spec:
   selector:
-    app: fe
+   app: fe
+
          

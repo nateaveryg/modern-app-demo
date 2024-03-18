@@ -1,11 +1,11 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: be
+  name: fe
 spec:
   selector:
     matchLabels:
-      name: be
+      name: fe
   replicas: 1
   minReadySeconds: 6
   strategy:
@@ -16,11 +16,11 @@ spec:
   template:
     metadata:
       labels:
-        name: be
+        name: fe
     spec:
       containers:
-      - image: be
-        name: be
+      - image: fe
+        name: fe
         imagePullPolicy: Always
         securityContext:
           runAsNonRoot: true

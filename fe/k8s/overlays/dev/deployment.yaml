@@ -2,6 +2,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: fe
+  labels:
+    app: fe
+  namespace: default
 spec:
   replicas: 1
   selector:
@@ -15,3 +18,13 @@ spec:
       containers:
         - name: fe
           image: fe
+---
+# service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: fe
+  namespace: default
+spec:
+  selector:
+   app: fe
