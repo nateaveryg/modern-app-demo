@@ -24,7 +24,7 @@ portForward:
 - resourceType: deployment
   resourceName: fe
   port: 8080
-  localPort: 
+  localPort: 5000
 verify: 
 - name: verification-test
   container:
