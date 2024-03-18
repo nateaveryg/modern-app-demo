@@ -24,4 +24,11 @@ portForward:
 - resourceType: deployment
   resourceName: fe
   port: 8080
-  localPort: 5000
+  localPort: 
+verify: 
+- name: verification-test
+  container:
+    name: verification-echo
+    image: ubuntu
+    command: ["/bin/sh"]
+    args: ["-c", 'echo "Your test or tests would go here."' ]
