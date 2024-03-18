@@ -19,6 +19,9 @@ metadata:
 serialPipeline:
  stages:
  - targetId: dev
+   strategy:
+    standard:
+      verify: true 
  - targetId: prod
 ---
 apiVersion: deploy.cloud.google.com/v1

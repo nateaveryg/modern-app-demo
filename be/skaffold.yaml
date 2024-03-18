@@ -25,3 +25,10 @@ portForward:
   resourceName: be
   port: 8080
   localPort: 5000
+verify: 
+- name: verification-test
+  container:
+    name: verification-echo
+    image: ubuntu
+    command: ["/bin/sh"]
+    args: ["-c", 'echo "Your test or tests would go here."' ]  
