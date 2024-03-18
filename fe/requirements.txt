@@ -4,4 +4,4 @@ Werkzeug==3.0.1
 jsonify==0.5
 jinja2
 datetime 
-requests
+projects/riccardo-blog-test-v1/locations/us-central1/repositories/python-local/requests

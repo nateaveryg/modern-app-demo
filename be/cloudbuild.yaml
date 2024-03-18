@@ -24,7 +24,7 @@ steps:
            'us-central1-docker.pkg.dev/riccardo-blog-test-v1/sabre-demo-be/be:${COMMIT_SHA}' \
            --format 'value(image_summary.digest)' > digest        
 
-        gcloud deploy releases create release-$(date +'%Y%m%d%H%M%S') \
+        gcloud deploy releases create be-release-$(date +'%Y%m%d%H%M%S') \
           --region us-central1 \
           --delivery-pipeline=sabre-demo-pipeline \
           --skaffold-file=./be/skaffold.yaml \
@@ -40,4 +40,4 @@ options:
   requestedVerifyOption: VERIFIED
   sourceProvenanceHash: ["SHA256"]    
   substitution_option: 'ALLOW_LOOSE'
-tags: ['ebc-demo-be']  
+tags: ['ebc-demo-be']
