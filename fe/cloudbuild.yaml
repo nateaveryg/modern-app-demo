@@ -40,4 +40,7 @@ options:
   requestedVerifyOption: VERIFIED
   sourceProvenanceHash: ["SHA256"]    
   substitution_option: 'ALLOW_LOOSE'
-tags: ['EBC-demo-fe']
+tags: ['ebc-demo-fe']
+artifacts:
+  pythonPackages:
+    - repository: 'https://projects/riccardo-blog-test-v1/locations/us-central1/repositories/python-local'
