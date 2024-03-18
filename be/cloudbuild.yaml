@@ -29,6 +29,7 @@ steps:
           --delivery-pipeline=sabre-demo-pipeline \
           --skaffold-file=./be/skaffold.yaml \
           --annotations=commitId=${REVISION_ID},gitlink=https://github.com/nateaveryg/modern-app-demo/commit/${COMMIT_SHA} \
+          --labels=project=enc-demo \
           --images=be=us-central1-docker.pkg.dev/riccardo-blog-test-v1/sabre-demo-be/be:${COMMIT_SHA} --format="value(image_summary.digest)"
           
         
@@ -39,4 +40,4 @@ options:
   requestedVerifyOption: VERIFIED
   sourceProvenanceHash: ["SHA256"]    
   substitution_option: 'ALLOW_LOOSE'
-tags: ['sabre-demo-be']  
+tags: ['ebc-demo-be']  
