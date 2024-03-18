@@ -21,7 +21,7 @@ serialPipeline:
  - targetId: dev
    strategy:
     standard:
-      verify: false
+      verify: true
  - targetId: prod
 ---
 apiVersion: deploy.cloud.google.com/v1
