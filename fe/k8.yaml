@@ -29,3 +29,13 @@ spec:
       containers:
         - name: fe
           image: fe
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: fe
+  namespace: default
+spec:
+  selector:
+    app: fe
+         
