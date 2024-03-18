@@ -29,7 +29,7 @@ steps:
           --delivery-pipeline=sabre-demo-pipeline \
           --skaffold-file=./fe/skaffold.yaml \
           --annotations=commitId=${REVISION_ID},gitlink=https://github.com/nateaveryg/modern-app-demo/commit/${COMMIT_SHA} \
-          --label=project=ebc-demo \
+          --labels=project=ebc-demo \
           --images=fe=us-central1-docker.pkg.dev/riccardo-blog-test-v1/sabre-demo-fe/fe:${COMMIT_SHA} --format="value(image_summary.digest)"
           
         
