@@ -19,7 +19,7 @@ metadata:
 manifests:
   kustomize:
     paths:
-    - k8s/overlays/base
+    - k8s/base
 portForward:
 - resourceType: deployment
   resourceName: fe
