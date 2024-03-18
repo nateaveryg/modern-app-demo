@@ -45,5 +45,3 @@ artifacts:
   pythonPackages:
     - repository: 'https://projects/riccardo-blog-test-v1/locations/us-central1/repositories/python-local'
       paths: ['dist/*']
-  objects:
-    location: 'us-central1'
