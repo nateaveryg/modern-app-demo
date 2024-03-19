@@ -21,6 +21,7 @@ spec:
     metadata:
       labels:
         name: fe
+        app: fe
     spec:
       containers:
       - image: fe
