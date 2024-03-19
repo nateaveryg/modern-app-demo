@@ -6,27 +6,29 @@ metadata:
     app: fe
   namespace: default
 spec:
-  replicas: 1
   selector:
     matchLabels:
       name: fe
       app: fe
+  replicas: 1
+  minReadySeconds: 6
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
   template:
     metadata:
       labels:
         name: fe
-        app: fe
     spec:
       containers:
-        - name: fe
-          image: fe
----
-# service.yaml
-apiVersion: v1
-kind: Service
-metadata:
-  name: fe
-  namespace: default
-spec:
-  selector:
-   app: fe
+      - image: fe
+        name: fe
+        imagePullPolicy: Always
+        securityContext:
+          runAsNonRoot: true
+          allowPrivilegeEscalation: false
+        ports:
+        - containerPort: 8080
+          protocol: TCP
