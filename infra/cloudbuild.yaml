@@ -3,14 +3,6 @@
 
 
 steps:
-  - id: 'tf-plan'
-    name: 'gcr.io/cloud-builders/git'
-    entrypoint: /bin/bash
-    args:
-      - '-c'
-      - |
-        echo "Cloning app repo ..."
-        git clone https://github.com/nateaveryg/modern-app-demo.git
   # Create release in Google Cloud Deploy
   - id: deploy to cloud deploy
     name: "gcr.io/cloud-builders/gcloud:latest"
@@ -20,10 +12,10 @@ steps:
       - "-c"
       - |
         gcloud deploy releases create infra-release-$(date +'%Y%m%d%H%M%S') \
-          --region=us-central1 \
           --delivery-pipeline=im-network-pipeline \
-          --skaffold-file=./infra/skaffold.yaml \
+          --source=./infra \
           --project=riccardo-blog-test-v1 \
+          --region=us-central1 \
           --labels=project=ebc-infra
           
 options:
