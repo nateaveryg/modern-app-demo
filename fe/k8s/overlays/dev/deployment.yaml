@@ -4,11 +4,3 @@ metadata:
   name: fe
   labels:
     env: dev
-spec:
-  template:
-    spec:
-      containers:
-      - name: fe
-        env:
-        - name: SITE_NAME
-          value: "Demo DEV Website"

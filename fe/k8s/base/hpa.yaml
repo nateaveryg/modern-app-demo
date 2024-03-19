@@ -2,8 +2,6 @@ apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
   name: fe
-  labels:
-    app: fe
   namespace: default
 spec:
   scaleTargetRef:
