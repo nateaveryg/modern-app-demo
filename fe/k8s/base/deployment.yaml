@@ -9,6 +9,7 @@ spec:
   selector:
     matchLabels:
       name: fe
+      app: fe
   replicas: 1
   minReadySeconds: 6
   strategy:
@@ -20,6 +21,7 @@ spec:
     metadata:
       labels:
         name: fe
+        app: fe
     spec:
       containers:
       - image: fe
