@@ -1,7 +1,15 @@
 # Overview: build and create a release via Google Cloud Deploy for Cloud Run
 # NOTE: currently requires SCM triggering due to dependency on the COMMIT_SHA variable
-steps:
 
+
+steps:
+  - id: 'tf-plan'
+    name: 'hashicorp/terraform:1.0.0'
+    entrypoint: 'sh'
+    args:
+      - '-c'
+      - |
+        terraform init
   # Create release in Google Cloud Deploy
   - id: deploy to cloud deploy
     name: "gcr.io/cloud-builders/gcloud:latest"
