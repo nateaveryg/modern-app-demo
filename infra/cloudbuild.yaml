@@ -1,0 +1,22 @@
+# Overview: build and create a release via Google Cloud Deploy for Cloud Run
+# NOTE: currently requires SCM triggering due to dependency on the COMMIT_SHA variable
+steps:
+
+  # Create release in Google Cloud Deploy
+  - id: deploy to cloud deploy
+    name: "gcr.io/cloud-builders/gcloud:latest"
+    entrypoint: /bin/bash
+    args:
+      - "-xe"
+      - "-c"
+      - |
+  
+        gcloud deploy releases create fe-release-$(date +'%Y%m%d%H%M%S') \
+          --region us-central1 \
+          --delivery-pipeline=im-network-pipeline \
+          --skaffold-file=./fe/skaffold.yaml \
+          --labels=project=ebc-demo
+          
+options:
+  machineType: 'E2_HIGHCPU_8'
+tags: ['ebc-demo-fe']
