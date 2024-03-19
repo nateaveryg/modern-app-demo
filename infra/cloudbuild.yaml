@@ -14,9 +14,9 @@ steps:
         gcloud deploy releases create fe-release-$(date +'%Y%m%d%H%M%S') \
           --region us-central1 \
           --delivery-pipeline=im-network-pipeline \
-          --skaffold-file=./fe/skaffold.yaml \
-          --labels=project=ebc-demo
+          --skaffold-file=./infra/skaffold.yaml \
+          --labels=project=ebc-infra
           
 options:
   machineType: 'E2_HIGHCPU_8'
-tags: ['ebc-demo-fe']
+tags: ['ebc-demo-infra']
