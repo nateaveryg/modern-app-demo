@@ -1,7 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: be
+  name: fe
+  labels:
+    app: fe
 spec:
   ports:
   - port: 8080
