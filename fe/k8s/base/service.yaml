@@ -9,4 +9,5 @@ spec:
   type: LoadBalancer
   selector:
     name: be
+    app: fe
   externalTrafficPolicy: Local
