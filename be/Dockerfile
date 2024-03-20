@@ -4,6 +4,10 @@ COPY ./be/requirements.txt ./
 
 RUN pip install --upgrade pip
 
+RUN pip install keyring
+
+RUN pip install keyrings.google-artifactregistry-auth
+
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY ./be/main.py /main.py
