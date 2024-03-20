@@ -23,11 +23,23 @@ serialPipeline:
     standard:
       verify: true 
  - targetId: prod-multi
+   deployParameters:
+   - values:
+       replicaCount: "2"
+     matchTargetLabels:
+       label1: label1
+   - values:
+       replicaCount: "3"
+     matchTargetLabels:
+       label2: label2 
+       
 ---
 apiVersion: deploy.cloud.google.com/v1
 kind: Target
 metadata:
  name: dev
+description: development cluster
+requireApproval: false  
 gke:
  cluster: projects/riccardo-blog-test-v1/locations/us-central1/clusters/devcluster
 ---
@@ -56,7 +68,11 @@ apiVersion: deploy.cloud.google.com/v1
 kind: Target
 metadata:
  name: prod-east
+ labels:
+   label1: label1
 description: production cluster in us-east1
+deployParameters:
+  application_env1: "sampleValue1"
 requireApproval: false
 gke:
  cluster: projects/riccardo-blog-test-v1/locations/us-east1/clusters/prodcluster-useast1
@@ -66,7 +82,11 @@ apiVersion: deploy.cloud.google.com/v1
 kind: Target
 metadata:
  name: prod-west
+ labels:
+   label2: label2
 description: production cluster in us-west1
+deployParameters:
+  application_env2: "sampleValue2"
 requireApproval: false
 gke:
  cluster: projects/riccardo-blog-test-v1/locations/us-west1/clusters/prodcluster-uswest1
