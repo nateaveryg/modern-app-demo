@@ -22,7 +22,7 @@ manifests:
     - k8s/overlays/dev
 portForward:
 - resourceType: deployment
-  resourceName: be
+  resourceName: be-app
   port: 8080
   localPort: 5000
 customActions:

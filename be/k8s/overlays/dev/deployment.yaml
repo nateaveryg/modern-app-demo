@@ -3,18 +3,18 @@ kind: Deployment
 metadata:
   name: be
   labels:
-    app: be
+    app: be-app
 spec:
   replicas: 1 # from-param: ${replicaCount}
   selector:
     matchLabels:
       name: be
-      app: be
+      app: be-app
   template:
     metadata:
       labels:
         name: be
-        app: be
+        app: be-app
     spec:
       containers:
         - name: be

@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: be
   labels:
-    app: be
+    app: be-app
 spec:
   ports:
   - port: 8080
@@ -11,4 +11,4 @@ spec:
   type: LoadBalancer
   selector:
     name: be
-    app: be
+    app: be-app
