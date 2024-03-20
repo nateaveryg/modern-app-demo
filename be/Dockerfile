@@ -8,6 +8,10 @@ RUN pip install keyring
 
 RUN pip install keyrings.google-artifactregistry-auth
 
+RUN keyring --list-backends
+
+COPY ./be/.pypirc $HOME/.pypirc
+
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY ./be/main.py /main.py
