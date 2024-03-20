@@ -24,6 +24,7 @@ Steps
 - Approvals
 - Automation
 - Promotion
+- Deploy parameters
 - single-target deployment
 - mulit-target deployment
 - Verification on Dev

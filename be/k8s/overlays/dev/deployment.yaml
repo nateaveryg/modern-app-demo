@@ -16,7 +16,7 @@ spec:
         - name: be
           image: be
           env:
-          - name: envar1
-            value: "default1" # from-param: ${application_env1}
-          - name: envar2
-            value: "default2" # from-param: ${application_env2}
+          - name: envvar1
+            value: default1 # from-param: ${application_env1}
+          - name: envvar2
+            value: default2 # from-param: ${application_env2}
