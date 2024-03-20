@@ -22,7 +22,7 @@ serialPipeline:
    strategy:
     standard:
       predeploy:
-        actions: ['predeploy-action''}']
+        actions: ['predeploy-action']
       verify: true 
  - targetId: prod-multi
    deployParameters:
