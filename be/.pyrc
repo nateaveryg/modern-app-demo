@@ -1,0 +1,14 @@
+[distutils]
+index-servers =
+    [virtual]
+    [local]
+    [remote]
+
+[virtual]
+repository = https://us-central1-python.pkg.dev/riccardo-blog-test-v1/python-virtual
+
+[local]
+repository = https://us-central1-python.pkg.dev/riccardo-blog-test-v1/python-local
+
+[remote]
+repository = https://us-central1-python.pkg.dev/riccardo-blog-test-v1/python-pypi
