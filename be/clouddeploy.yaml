@@ -46,6 +46,7 @@ kind: Target
 metadata:
   name: prod-multi
 description: production clusters east and west
+requireApproval: true
 multiTarget:
   targetIds: [prod-east, prod-west]
 
@@ -66,7 +67,7 @@ kind: Target
 metadata:
  name: prod-west
 description: production cluster in us-west1
-requireApproval: true
+requireApproval: false
 gke:
  cluster: projects/riccardo-blog-test-v1/locations/us-central1/clusters/prodcluster-uswest1
 
