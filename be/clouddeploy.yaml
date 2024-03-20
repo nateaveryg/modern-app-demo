@@ -31,8 +31,8 @@ serialPipeline:
        runtimeConfig:
          kubernetes:
            serviceNetworking:
-             service: be
-             deployment: be-app
+             service: be-service
+             deployment: be-deployment
        canaryDeployment: 
          percentages: [50]
          verify: false
