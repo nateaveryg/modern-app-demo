@@ -25,6 +25,13 @@ portForward:
   resourceName: be
   port: 8080
   localPort: 5000
+customActions:
+- name: predeploy-action
+  containers:
+  - name: predeploy-echo
+    image: ubuntu
+    command: ["/bin/sh"]
+    args: ["-c", 'echo "This is a Prre-Deploy Action. Hello, World!"']  
 verify: 
 - name: verification-test
   container:
