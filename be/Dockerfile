@@ -12,6 +12,8 @@ RUN keyring --list-backends
 
 COPY ./be/.pypirc $HOME/.pypirc
 
+COPY ./be/pip.conf $VIRTUAL_ENV/pip.conf
+
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY ./be/main.py /main.py
