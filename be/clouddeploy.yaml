@@ -56,7 +56,7 @@ kind: Target
 metadata:
  name: prod-east
 description: production cluster in us-east1
-requireApproval: true
+requireApproval: false
 gke:
  cluster: projects/riccardo-blog-test-v1/locations/us-central1/clusters/prodcluster-useast1
  
