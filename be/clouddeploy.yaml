@@ -59,7 +59,7 @@ metadata:
 description: production cluster in us-east1
 requireApproval: false
 gke:
- cluster: projects/riccardo-blog-test-v1/locations/us-central1/clusters/prodcluster-useast1
+ cluster: projects/riccardo-blog-test-v1/locations/us-east1/clusters/prodcluster-useast1
  
 ---
 apiVersion: deploy.cloud.google.com/v1
@@ -69,7 +69,7 @@ metadata:
 description: production cluster in us-west1
 requireApproval: false
 gke:
- cluster: projects/riccardo-blog-test-v1/locations/us-central1/clusters/prodcluster-uswest1
+ cluster: projects/riccardo-blog-test-v1/locations/us-west1/clusters/prodcluster-uswest1
 
 ---
 apiVersion: deploy.cloud.google.com/v1
