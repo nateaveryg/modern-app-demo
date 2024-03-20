@@ -27,4 +27,5 @@ Steps
 - Deploy parameters
 - single-target deployment
 - mulit-target deployment
+- pre-deploy hook sample on Dev
 - Verification on Dev
