@@ -2,15 +2,19 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: be
+  labels:
+    app: be
 spec:
   replicas: 1 # from-param: ${replicaCount}
   selector:
     matchLabels:
       name: be
+      app: be
   template:
     metadata:
       labels:
         name: be
+        app: be
     spec:
       containers:
         - name: be
