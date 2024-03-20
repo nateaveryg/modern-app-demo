@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: be
 spec:
-  replicas: 1
+  replicas: 1 # from-param: ${replicaCount}
   selector:
     matchLabels:
       name: be
