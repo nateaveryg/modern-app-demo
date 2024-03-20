@@ -25,6 +25,17 @@ serialPipeline:
         actions: ['predeploy-action']
       verify: true 
  - targetId: prod-multi
+   profiles: []
+   strategy:
+     canary:
+       runtimeConfig:
+         kubernetes:
+           serviceNetworking:
+             service: be
+             deployment: be
+       canaryDeployment: 
+         percentages: [50]
+         verify: false
    deployParameters:
    - values:
        replicaCount: "2"
