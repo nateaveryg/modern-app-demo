@@ -22,10 +22,11 @@ Steps
 
 ### Cloud Deploy
 - Approvals
+- single-target deployment
+- mulit-target deployment
+- Canary Deployment Pattern to multi-target
 - Automation
 - Promotion
 - Deploy parameters
-- single-target deployment
-- mulit-target deployment
 - pre-deploy hook sample on Dev
 - Verification on Dev

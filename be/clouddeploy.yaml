@@ -35,7 +35,7 @@ serialPipeline:
              deployment: be-deployment
        canaryDeployment: 
          percentages: [50]
-         verify: false
+         verify: true
    deployParameters:
    - values:
        replicaCount: "2"
