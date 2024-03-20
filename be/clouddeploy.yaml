@@ -72,7 +72,7 @@ metadata:
    label1: label1
 description: production cluster in us-east1
 deployParameters:
-  application_env1: "sampleValue1"
+  application_env1: "PROD-BE-US-EAST1"
 requireApproval: false
 gke:
  cluster: projects/riccardo-blog-test-v1/locations/us-east1/clusters/prodcluster-useast1
@@ -86,7 +86,7 @@ metadata:
    label2: label2
 description: production cluster in us-west1
 deployParameters:
-  application_env2: "sampleValue2"
+  application_env2: "PROD-BE-US-WEST1"
 requireApproval: false
 gke:
  cluster: projects/riccardo-blog-test-v1/locations/us-west1/clusters/prodcluster-uswest1
