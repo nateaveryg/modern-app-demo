@@ -37,7 +37,7 @@ customActions:
   - name: postdeploy-speed-check
     image: gcr.io/gcp-runtimes/ubuntu_18_0_4
     command: ["curl"]
-    args: ["https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=http://http://34.70.217.22:8080/"]    
+    args: ["https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=http://34.70.217.22:8080/"]    
 verify: 
 - name: verification-test
   container:
