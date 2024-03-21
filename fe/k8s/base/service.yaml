@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: fe
+  name: fe-service
 spec:
   ports:
   - port: 8080
     name: http
   type: LoadBalancer
   selector:
-    app: fe
+    app: fe-app
   externalTrafficPolicy: Local

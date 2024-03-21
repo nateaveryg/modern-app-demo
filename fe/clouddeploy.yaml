@@ -29,8 +29,8 @@ serialPipeline:
        runtimeConfig:
          kubernetes:
            serviceNetworking:
-             service: "fe"
-             deployment: "fe"
+             service: "fe-service"
+             deployment: "fe-deployment"
        canaryDeployment:
          percentages:
          - 50
