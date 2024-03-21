@@ -22,7 +22,7 @@ manifests:
     - k8s/base
 portForward:
 - resourceType: deployment
-  resourceName: fe
+  resourceName: fe-app
   port: 8080
   localPort: 5000
 verify: 

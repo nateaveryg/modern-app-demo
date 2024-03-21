@@ -1,13 +1,13 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: fe
+  name: fe-deployment
   labels:
-    app: fe
+    app: fe-app
 spec:
   selector:
     matchLabels:
-      app: fe
+      app: fe-app
   replicas: 1
   minReadySeconds: 6
   strategy:
@@ -18,7 +18,7 @@ spec:
   template:
     metadata:
       labels:
-        app: fe
+        app: fe-app
     spec:
       containers:
       - image: fe
