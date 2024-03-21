@@ -23,6 +23,8 @@ serialPipeline:
     standard:
       predeploy:
         actions: ['predeploy-action']
+      postdeploy:
+        actions: ['postdeploy-action']
       verify: true
  - targetId: prod
    profiles: []

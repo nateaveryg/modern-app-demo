@@ -32,6 +32,12 @@ customActions:
     image: ubuntu
     command: ["/bin/sh"]
     args: ["-c", 'echo "This is a Prre-Deploy Action. Hello, World!"']   
+- name: posteploy-action
+  containers:
+  - name: postdeploy-action
+    image: gcr.io/gcp-runtime/ubuntu_18_0_4
+    command: ["curl"]
+    args: ["-c", 'echo "This is a Prre-Deploy Action. Hello, World!"']    
 verify: 
 - name: verification-test
   container:
