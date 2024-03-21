@@ -32,7 +32,7 @@ customActions:
     image: ubuntu
     command: ["/bin/sh"]
     args: ["-c", 'echo "This is a Prre-Deploy Action. Hello, World!"']   
-- name: posteploy-action
+- name: postdeploy-action
   containers:
   - name: postdeploy-speed-check
     image: gcr.io/gcp-runtime/ubuntu_18_0_4
