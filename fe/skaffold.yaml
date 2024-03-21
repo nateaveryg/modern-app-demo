@@ -34,10 +34,10 @@ customActions:
     args: ["-c", 'echo "This is a Prre-Deploy Action. Hello, World!"']   
 - name: posteploy-action
   containers:
-  - name: postdeploy-action
+  - name: postdeploy-speed-check
     image: gcr.io/gcp-runtime/ubuntu_18_0_4
     command: ["curl"]
-    args: ["-c", 'echo "This is a Prre-Deploy Action. Hello, World!"']    
+    args: ["https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=http://34.29.149.75:8080/hello"]    
 verify: 
 - name: verification-test
   container:
