@@ -13,6 +13,7 @@ Steps
 - Build
 - Push to AR
 - Create a release for Cloud Deploy
+Waitfor
 
 ### Artifact Registry
 - Local Python Repository
