@@ -11,7 +11,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-# Last update: 06-17-2024
+# Last update: 06-17-2024 w/ pre-deploy action enabled
 
 apiVersion: deploy.cloud.google.com/v1
 kind: DeliveryPipeline
