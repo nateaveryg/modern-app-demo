@@ -22,8 +22,8 @@ serialPipeline:
  - targetId: dev
    strategy:
     standard:
-##      predeploy:
-##        actions: ['predeploy-action']
+      predeploy:
+        actions: ['predeploy-action']
       postdeploy:
         actions: ['postdeploy-action']
       verify: false
