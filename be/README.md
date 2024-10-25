@@ -6,7 +6,7 @@ The service listens on port 8080 and returns a static response to the /hello pat
 
 ## Features included in the demo
 
-Builds a python application and deploys it as a container to GKE.  There are two environments - Dev and Prod.  Prod has clusters on both the east and west coasts.
+Builds a python application and deploys it as a container to GKE.  There are two environments - Dev and Prod.  Prod has clusters on both the east and west coasts.  This example combines multiple capabilities across multiple Google Cloud 1P CI/CD apps.
 
 ### Cloud Build
 Steps
@@ -14,6 +14,10 @@ Steps
 - Push to AR
 - Create a release for Cloud Deploy
 Waitfor
+
+### Artifact Analysis
+- Vulnerability scan
+- SBOM
 
 ### Artifact Registry
 - Local Python Repository
