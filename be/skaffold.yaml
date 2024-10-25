@@ -25,23 +25,18 @@ portForward:
   resourceName: be-app
   port: 8080
   localPort: 5000
-customActions:
-- name: predeploy-action
-  containers:
-  - name: predeploy-echo
-    image: ubuntu
-    command: ["/bin/sh"]
-    args: ["-c", 'echo "This is a Prre-Deploy Action. Hello, World!"']  
-- name: postploy-action
-  containers:
-  - name: postploy-echo
-    image: ubuntu
-    command: ["/bin/sh"]
-    args: ["-c", 'echo "This is a Prre-Deploy Action. Hello, World!"']     
 verify: 
 - name: verification-test
   container:
     name: verification-echo
     image: ubuntu
     command: ["/bin/sh"]
-    args: ["-c", 'echo "Your test or tests would go here."' ]  
+    args: ["-c", 'echo "Your test or tests would go here."' ] 
+customActions:
+- name: predeploy-action
+  containers:
+  - name: predeploy-echo
+    image: ubuntu
+    command: ["/bin/sh"]
+    args: ["-c", 'echo "This is a Prre-Deploy Action. Hello, World!"']    
+ 
