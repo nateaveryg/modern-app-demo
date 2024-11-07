@@ -7,8 +7,8 @@ spec:
   scaleTargetRef:
     kind: deployment
     name: fe
-  minReplicas: 1
-  maxReplicas: 1
+  minReplicas: 4
+  maxReplicas: 4
   metrics:
   - type: Resource
     resource:
