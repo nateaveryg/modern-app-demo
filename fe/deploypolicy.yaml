@@ -1,0 +1,16 @@
+apiVersion: deploy.cloud.google.com/v1
+description: Restrict all rollouts in the deploy-policy-pipeline resource for the next ten years
+kind: DeployPolicy
+metadata:
+  name: quickstart-deploy-policy
+selectors:
+- deliveryPipeline:
+    id: 'sabre-demo-pipeline'
+rules:
+- rolloutRestriction:
+    id: no-rollouts
+    timeWindows:
+      timeZone: America/New_York
+      oneTimeWindows:
+      - start: 2024-01-01 00:00
+        end: 2034-01-01 24:00
