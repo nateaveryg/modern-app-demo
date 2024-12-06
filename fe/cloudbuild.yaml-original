@@ -26,7 +26,7 @@ steps:
 
         gcloud deploy releases create fe-release-$(date +'%Y%m%d%H%M%S') \
           --region us-central1 \
-          --delivery-pipeline=app-demo-pipeline \
+          --delivery-pipeline=sabre-demo-pipeline \
           --skaffold-file=./fe/skaffold.yaml \
           --annotations=commitId=${REVISION_ID},gitlink=https://github.com/nateaveryg/modern-app-demo/commit/${COMMIT_SHA} \
           --labels=project=ebc-demo \
