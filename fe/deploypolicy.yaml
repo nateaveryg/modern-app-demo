@@ -5,12 +5,12 @@ metadata:
   name: quickstart-deploy-policy
 selectors:
 - deliveryPipeline:
-    id: 'sabre-demo-pipeline'
+    id: 'app-demo-pipeline'
 rules:
 - rolloutRestriction:
     id: no-rollouts
     timeWindows:
       timeZone: America/New_York
       oneTimeWindows:
-      - start: 2024-01-01 00:00
-        end: 2034-01-01 24:00
+      - start: 2024-11-18 00:00
+        end: 2025-01-07 24:00
